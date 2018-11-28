@@ -97,6 +97,12 @@ function attachEventListeners(employees) {
             showModal(employees, index)
         }
     });
+    // Click anywhere outside modal to close it
+    window.addEventListener('click', e => {
+        if(e.target.id === 'modal-container'){
+            removeModal();
+        }
+    })
     // Keyup event listener for search filter
     document.body.addEventListener('keyup', e => {
         if(e.target.id === 'search-input'){
